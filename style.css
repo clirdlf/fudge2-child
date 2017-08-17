@@ -8,8 +8,12 @@
  Version:      1.0.0
 */
 
-.home .speakers .speakers__layout {
+.speakers .speakers__layout {
 	text-align: center;
+}
+
+.speakers .btn {
+	display: none;
 }
 
 .site__header-top {
