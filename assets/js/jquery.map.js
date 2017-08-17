@@ -90,21 +90,25 @@ Location = function ( obj ) {
     },
     _checkPlacemerk = function ( id ) {
         var place = _findPlacemark( id );
-        if ( place !== false ) {
-            if ( _window.width() >= 767 ) {
-                _map.panTo({
-                    lat: place.getPosition().lat(),
-                    lng: place.getPosition().lng() - delta / markerZoom
-                });
-            } else {
-                _map.panTo({
-                    lat: place.getPosition().lat() - deltaY / markerZoom,
-                    lng: place.getPosition().lng()
-                });
-            }
+        if ( _window.width() >= 767 ) {
+            _map.panTo({
+                lat: place.getPosition().lat() ,
+                lng: place.getPosition().lng() - delta / markerZoom
+            });
             _map.setZoom( markerZoom );
-            place.info.open(_map, place);
+            _map.setCenter(place.getPosition());
+            _map.panBy(-200, 100);
+        } else {
+            _map.panTo({
+                lat: place.getPosition().lat() - deltaY / markerZoom,
+                lng: place.getPosition().lng()
+            });
+            _map.setZoom( markerZoom );
+            _map.setCenter(place.getPosition());
+            _map.panBy(100, 100);
         }
+
+        place.info.open(_map, place);
     },
     _findPlacemark = function ( id ) {
         for ( var i = 0; i < _self.markers.length; i++ ) {
