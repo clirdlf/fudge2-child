@@ -7,3 +7,11 @@
  Template:     fudge-2
  Version:      1.0.0
 */
+
+.home .speakers .speakers__layout {
+	text-align: center;
+}
+
+.site__header-top {
+  background: rgba(0,0,0,0.09);
+}
