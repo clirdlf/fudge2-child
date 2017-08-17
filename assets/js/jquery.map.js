@@ -22,7 +22,7 @@ Location = function ( obj ) {
     _window = jQuery( window ),
     delta = 3.3,
     deltaY = 1.4,
-    markerZoom = 15;
+    markerZoom = 18;
     _self.markers = [];
     _self.bounds = [];
 
@@ -95,7 +95,7 @@ Location = function ( obj ) {
                 lat: place.getPosition().lat() ,
                 lng: place.getPosition().lng() - delta / markerZoom
             });
-            _map.setZoom( markerZoom );
+            // _map.setZoom( markerZoom );
             _map.setCenter(place.getPosition());
             _map.panBy(-200, 100);
         } else {
@@ -103,7 +103,7 @@ Location = function ( obj ) {
                 lat: place.getPosition().lat() - deltaY / markerZoom,
                 lng: place.getPosition().lng()
             });
-            _map.setZoom( markerZoom );
+            // _map.setZoom( markerZoom );
             _map.setCenter(place.getPosition());
             _map.panBy(100, 100);
         }
