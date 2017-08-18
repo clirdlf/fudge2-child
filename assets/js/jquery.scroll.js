@@ -1,0 +1,31 @@
+$(document).ready(function() {
+  "use scrict";
+  
+  var offset   = 200;
+  var duration = 500;
+
+  $('a').bind('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top - 78
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
+  });
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > offset) {
+      $('.scroll-to-top').fadeIn(duration);
+    } else {
+      $('.scroll-to-top').fadeOut(duration);
+    }
+  });
+
+  $('.scroll-to-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({
+      scrollTop: 0
+    }, duration);
+    return false;
+  });
+
+});
