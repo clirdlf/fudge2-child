@@ -19,3 +19,15 @@
 .site__header-top {
   background: rgba(0,0,0,0.09);
 }
+
+.speakers .speakers__layout {
+	text-align: center;
+}
+
+.speakers .btn {
+	display: none;
+}
+
+.single-speaker .speaker-profile .schedule .site__centered {
+	display: none;
+}
